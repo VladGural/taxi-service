@@ -30,7 +30,7 @@ Fork this project and clone it.
 
 You can use file `src/main/resources/init_db.sql` to create test DB with necessary tables.
 
-Now there is dependency "MySQL DB" in pom.xml.
+Now there is dependency "MySQL DB" in `pom.xml`.
 ~~~
 <dependency>
     <groupId>mysql</groupId>
