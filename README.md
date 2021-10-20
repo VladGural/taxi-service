@@ -1,12 +1,13 @@
 ## About this project
 In this project I want to show my skills in Java, OOP and SOLID principles, JDBC (with key CRUD operations), Web.
 ~~~
-*Firstly, in this application you should create a new Driver and then pass authentication using you new profile.
+*Firstly, in this application you should create a new Driver and then pass authentication 
+using your new profile.
 *Inside the application, you can create new Drivers, Manufacturers, Cars, and add Drivers to Cars.
 *You can also view list of existing Drivers, Manufacturers, and Cars.
 *You can delete Drivers, Manufacturers, and Cars.
-*Application doesn't allow you to create Drivers with same License Numbers (licenseNumber must be in particular format)
-or Manufacturers with same names.
+*Application doesn't allow you to create Drivers with same License Numbers 
+(License Number must be in particular format) or Manufacturers with same names.
 ~~~    
 
 ## Technologies which I used
