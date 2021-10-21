@@ -9,6 +9,8 @@ using your new profile.
 *Application doesn't allow you to create Drivers with same License Numbers 
 (License Number must be in particular format) or Manufacturers with same names.
 ~~~    
+You can test the application by using the following url 
+[https://still-brook-27820.herokuapp.com/](https://still-brook-27820.herokuapp.com/)  
 
 ## Technologies which I used
 Project is created with:
@@ -26,9 +28,9 @@ You should install MySQL or another DB
 
 Fork this project and clone it.
 
-You can use file src/main/resources/init_db.sql to create test DB with necessary tables.
+You can use file `src/main/resources/init_db.sql` to create test DB with necessary tables.
 
-Now there is dependency "MySQL DB" in pom.xml.
+Now there is dependency "MySQL DB" in `pom.xml`.
 ~~~
 <dependency>
     <groupId>mysql</groupId>
@@ -38,7 +40,7 @@ Now there is dependency "MySQL DB" in pom.xml.
 ~~~
 If you have another DB, you should change this dependency to better fit your DB.
 
-Also, in the file src/main/java/mate/util/ConnectionUtil.java you should fill correct values in these fields
+Also, in the file `src/main/java/mate/util/ConnectionUtil.java` you should fill correct values in these fields
 ~~~
     public static final String DRIVER_NAME = "**DRIVER_NAME**";
     public static final String URL = "**URL**";
@@ -52,4 +54,3 @@ mvn clean package
 java -jar target/dependency/webapp-runner.jar target/*.war
 ~~~
 
-Also, you can test the application by using the following url [https://still-brook-27820.herokuapp.com/](https://still-brook-27820.herokuapp.com/)  

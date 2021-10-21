@@ -113,7 +113,7 @@
 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>mate.controller.log.LoginController</servlet-class>
+        <servlet-class>mate.controller.auth.LoginController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -122,7 +122,7 @@
 
     <servlet>
         <servlet-name>logout</servlet-name>
-        <servlet-class>mate.controller.log.LogoutController</servlet-class>
+        <servlet-class>mate.controller.auth.LogoutController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>logout</servlet-name>
