@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.exception.DataException;
+import mate.exception.IllegalArgumentException;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
@@ -37,7 +37,7 @@ public class AddNewDriverToCarController extends HttpServlet {
             Driver driver = driverService.get(driverId);
             carService.addDriverToCar(driver, car);
             resp.sendRedirect("/cars");
-        } catch (DataException e) {
+        } catch (IllegalArgumentException e) {
             req.setAttribute("errorMsg", e.getMessage());
             req.getRequestDispatcher("/WEB-INF/views/car/add_new_driver_to_car.jsp")
                     .forward(req, resp);

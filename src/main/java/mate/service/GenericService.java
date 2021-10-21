@@ -1,16 +1,16 @@
 package mate.service;
 
 import java.util.List;
-import mate.exception.DataException;
+import mate.exception.IllegalArgumentException;
 
 public interface GenericService<T> {
-    T create(T element) throws DataException;
+    T create(T element) throws IllegalArgumentException;
 
-    T get(Long id) throws DataException;
+    T get(Long id) throws IllegalArgumentException;
 
     List<T> getAll();
 
-    T update(T element) throws DataException;
+    T update(T element) throws IllegalArgumentException;
 
     boolean delete(Long id);
 }

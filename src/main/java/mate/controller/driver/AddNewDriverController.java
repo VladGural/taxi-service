@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.exception.DataException;
+import mate.exception.IllegalArgumentException;
 import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
@@ -27,7 +27,7 @@ public class AddNewDriverController extends HttpServlet {
         try {
             String licenseNumber = req.getParameter("license_number");
             if (!Driver.isLicenseNumberCorrect(licenseNumber)) {
-                throw new DataException("Incorrect LicenseNumber format");
+                throw new IllegalArgumentException("Incorrect LicenseNumber format");
             }
             Driver driver = new Driver();
             driver.setName(req.getParameter("name"));
@@ -36,7 +36,7 @@ public class AddNewDriverController extends HttpServlet {
             driver.setLicenseNumber(licenseNumber);
             driverService.create(driver);
             resp.sendRedirect("/drivers");
-        } catch (DataException e) {
+        } catch (IllegalArgumentException e) {
             req.setAttribute("errorMsg", e.getMessage());
             req.getRequestDispatcher("/WEB-INF/views/driver/add_new_driver.jsp")
                     .forward(req, resp);

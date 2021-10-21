@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.exception.DataException;
+import mate.exception.IllegalArgumentException;
 import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
@@ -31,7 +31,7 @@ public class AddNewManufacturerController extends HttpServlet {
             manufacturer.setCountry(req.getParameter("country"));
             manufacturerService.create(manufacturer);
             resp.sendRedirect("/manufacturers");
-        } catch (DataException e) {
+        } catch (IllegalArgumentException e) {
             req.setAttribute("errorMsg", e.getMessage());
             req.getRequestDispatcher("/WEB-INF/views/manufacturer/add_new_manufacturer.jsp")
                     .forward(req, resp);

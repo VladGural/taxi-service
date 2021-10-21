@@ -3,7 +3,7 @@ package mate.service.impl;
 import java.util.List;
 import java.util.Optional;
 import mate.dao.CarDao;
-import mate.exception.DataException;
+import mate.exception.IllegalArgumentException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
@@ -21,10 +21,10 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car get(Long id) throws DataException {
+    public Car get(Long id) throws IllegalArgumentException {
         Optional<Car> optionalCar = carDao.get(id);
         if (optionalCar.isEmpty()) {
-            throw new DataException("Don't exist Car dy id " + id);
+            throw new IllegalArgumentException("Don't exist Car dy id " + id);
         }
         return optionalCar.get();
     }
